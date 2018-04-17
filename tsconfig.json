@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": [
+      "es6",
+      "es2015.promise",
+      "dom"
+    ],
+    "jsx": "react",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "strict": false,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "importHelpers": true,
+    "paths": {
+      "app/*": ["./app/*"],
+      "action/*": ["./src/action/*"],
+      "api/*": ["./src/api/*"],
+      "component/*": ["./src/component/*"],
+      "container": ["./src/container/index"],
+      "container/*": ["./src/container/*"],
+      "detector": ["./src/detector/index"],
+      "detector/*": ["./src/detector/*"],
+      "model/*": ["./src/model/*"],
+      "mapper/*": [".src/mapper/*"],
+      "reducer": ["./src/reducer/index"],
+      "reducer/*": ["./src/reducer/*"],
+      "router/*": ["./src/router/*"],
+      "selector/*": ["./src/selector/*"],
+      "store": ["./src/store/index"],
+      "store/*": ["./src/store/*"],
+      "view/*": ["./src/view/*"],
+      "util/*": ["./src/util/*"]
+    },
+    "typeRoots": [
+      "node_modules/@types",
+      "./type",
+      "./test/e2e/puppeteer.d.ts"
+    ]
+  },
+  "exclude": [
+    "server",
+    "node_modules"
+  ]
+}
+
