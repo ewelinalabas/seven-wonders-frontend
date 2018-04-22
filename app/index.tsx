@@ -15,6 +15,7 @@ import { combineReducers } from 'reducer/combineReducers';
 import { markAsyncAction } from 'store/markAsyncAction';
 import { AppView } from 'view/AppView/AppView';
 import WebFont from 'webfontloader';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const history = createBrowserHistory();
 
@@ -85,7 +86,9 @@ function render(Component: ComponentClass<any> | StatelessComponent<any>, root: 
   ReactDOM.render(
     <StoreProvider store={store}>
       <ConnectedRouter history={history}>
-        <Component />
+        <MuiThemeProvider>
+          <Component />
+        </MuiThemeProvider>
       </ConnectedRouter>
     </StoreProvider>,
     root

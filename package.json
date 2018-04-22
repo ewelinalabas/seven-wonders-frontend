@@ -9,7 +9,7 @@
     "node": ">=8.9.0"
   },
   "scripts": {
-    "dev": "webpack-serve --port 3000 --host localhost",
+    "dev": "webpack-serve --port 4000 --host localhost",
     "build": "rimraf dist && webpack -p --progress",
     "test": "jest",
     "prettify": "prettier --write --single-quote --print-width 100 \"src/**/*.ts?(x)\" \"app/**/*.ts?(x)\" \"app/**/*.js\" \"test/**/*.ts?(x)\"",
@@ -26,6 +26,7 @@
     "file-loader": "^1.1.11",
     "glamor": "^2.20.40",
     "glamorous": "^4.12.0",
+    "material-ui": "^0.20.0",
     "offline-plugin": "^4.9.0",
     "path-to-regexp": "^2.2.0",
     "query-string": "^5.1.0",
@@ -47,6 +48,7 @@
   },
   "devDependencies": {
     "@types/jest": "^22.2.0",
+    "@types/material-ui": "^0.21.1",
     "@types/query-string": "^5.0.1",
     "@types/react": "^16.0.25",
     "@types/react-dom": "^16.0.3",

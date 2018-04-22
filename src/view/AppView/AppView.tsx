@@ -6,9 +6,11 @@ import { AppRoute } from 'app/route';
 import { NotFoundPage } from 'view/NotFoundPage/NotFoundPage';
 import { HomePageLoadable } from 'view/HomePage/HomePage.l';
 import { CounterPageLoadable } from 'view/CounterPage/CounterPage.l';
+import { TopBar } from 'view/AppView/TopNav/TopBar';
 
 export const AppView: SFC = () => (
   <AppWrapper>
+    <TopBar />
     <MainWrapper>
       <ContentWrapper>
         <Switch>
