@@ -8,12 +8,13 @@
       "es2015.promise",
       "dom"
     ],
-    "jsx": "react",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "strict": false,
-    "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
+    "jsx": "react",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
     "importHelpers": true,
     "paths": {
       "app/*": ["./app/*"],
