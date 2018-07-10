@@ -12,7 +12,7 @@ export const NavigationMenu: SFC<NavigationMenu.Props> = props => {
   return (
     <NavigationMenuPaper>
       <List>
-        <ListItem primaryText="Some value"/>
+        <ListItem primaryText="Some value" />
       </List>
     </NavigationMenuPaper>
   );

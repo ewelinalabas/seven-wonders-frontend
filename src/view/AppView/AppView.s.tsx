@@ -25,4 +25,4 @@ export const ContentWrapper = glamorous.main({
 
 export const LeftNavigatonMenuWrapper = glamorous.div({
   width: '300px'
-})
+});
