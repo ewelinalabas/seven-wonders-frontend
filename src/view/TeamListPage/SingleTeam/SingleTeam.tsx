@@ -8,22 +8,24 @@ import CardText from 'material-ui/Card/CardText';
 import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
 import Avatar from 'material-ui/Avatar';
-import IconMenu from 'material-ui/IconMenu';
-import IconButton from 'material-ui/IconButton';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-import { darkBlack, grey400 } from 'material-ui/styles/colors';
-import MenuItem from 'material-ui/MenuItem';
+import { darkBlack } from 'material-ui/styles/colors';
 import Divider from 'material-ui/Divider';
 import UserAvatar from '../../../../app/assets/user.png';
+import { Team } from 'model/Team';
 
 export namespace SingleTeam {
-  export type Props = {};
+  export type Props = {
+    team: Team;
+  };
 }
 
 export const SingleTeam: SFC<SingleTeam.Props> = props => {
   return (
     <SingleTeamWrapper>
-      <CardTitle title="First Team" />
+      <CardTitle
+        title={props.team.name}
+        subtitle={props.team.description}
+      />
       <CardText>
         <List>
           <ListItem
