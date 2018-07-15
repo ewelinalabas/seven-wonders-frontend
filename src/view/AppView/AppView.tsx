@@ -12,6 +12,7 @@ import { NotFoundPage } from 'view/NotFoundPage/NotFoundPage';
 import { TeamListPageLoadable } from 'view/TeamListPage/TeamListPage.l';
 import { TopBar } from 'view/AppView/TopNav/TopBar';
 import { NavigationMenu } from 'view/AppView/NavigationMenu/NavigationMenu';
+import { CreateTeamPageLoadable } from 'view/CreateTeamPage/CreateTeamPage.l';
 
 export const AppView: SFC = () => (
   <AppWrapper>
@@ -23,6 +24,7 @@ export const AppView: SFC = () => (
       <ContentWrapper>
         <Switch>
           <Route path={AppRoute.HOME} component={TeamListPageLoadable} exact />
+          <Route path={AppRoute.CREATE_TEAM} component={CreateTeamPageLoadable} exact />
           <Route component={NotFoundPage} />
         </Switch>
       </ContentWrapper>

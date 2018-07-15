@@ -22,10 +22,7 @@ export namespace SingleTeam {
 export const SingleTeam: SFC<SingleTeam.Props> = props => {
   return (
     <SingleTeamWrapper>
-      <CardTitle
-        title={props.team.name}
-        subtitle={props.team.description}
-      />
+      <CardTitle title={props.team.name} subtitle={props.team.description} />
       <CardText>
         <List>
           <ListItem

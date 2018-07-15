@@ -5,8 +5,5 @@ import { changedPositive } from 'detector/changedDetector';
 import { fetchTeams } from 'action/teamAction';
 
 export const teamDetector = reduceDetectors(
-  mountDetector(
-    selectHasMatch(AppRoute.HOME),
-    changedPositive(() => fetchTeams())
-  )
+  mountDetector(selectHasMatch(AppRoute.HOME), changedPositive(() => fetchTeams()))
 );

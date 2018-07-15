@@ -12,5 +12,5 @@ export namespace TeamState {
 }
 
 export type TeamState = {
-  team: TeamState.Domain
+  team: TeamState.Domain;
 };

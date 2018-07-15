@@ -6,7 +6,4 @@ export function selectDomain(state: AppState): TeamState.Domain {
   return state.team || TeamState.INITIAL_DOMAIN;
 }
 
-export const selectTeamList = createSelector(
-  selectDomain,
-  domain => domain && domain.list
-);
+export const selectTeamList = createSelector(selectDomain, domain => domain && domain.list);

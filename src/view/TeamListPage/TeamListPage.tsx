@@ -14,14 +14,12 @@ export namespace TeamListPage {
   export type Props = StateProps & OwnProps;
 }
 
-export const TeamListPagePure: SFC<TeamListPage.Props> = props =>
+export const TeamListPagePure: SFC<TeamListPage.Props> = props => (
   <TeamListWrapper>
     <h2>All Teams</h2>
-    {props.list.map((team, index) =>
-      <SingleTeam key={index} team={team}/>
-    )}
-  </TeamListWrapper>;
-
+    {props.list.map((team, index) => <SingleTeam key={index} team={team} />)}
+  </TeamListWrapper>
+);
 
 export const TeamListPage: ComponentClass<TeamListPage.OwnProps> = connect(
   (state): TeamListPage.StateProps => ({
