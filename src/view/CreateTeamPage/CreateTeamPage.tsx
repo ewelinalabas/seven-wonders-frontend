@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { SFC } from 'react';
 import CardTitle from 'material-ui/Card/CardTitle';
-import { CreateTeamPageWrapper } from 'view/CreateTeamPage/CreateTeamPage.s';
+import { CardActionsWrapper, CreateTeamPageWrapper } from 'view/CreateTeamPage/CreateTeamPage.s';
 import CardText from 'material-ui/Card/CardText';
 import { TextField } from 'component/Form/TextField/TextField';
 import { ComponentClass, connect } from 'react-redux';
@@ -9,8 +9,8 @@ import { compose } from 'redux';
 import { InjectedFormProps, reduxForm } from 'redux-form';
 import { FormNames } from 'register/FormNames';
 import CardActions from 'material-ui/Card/CardActions';
-import FlatButton from 'material-ui/FlatButton';
 import { createTeam } from 'action/teamAction';
+import RaisedButton from 'material-ui/RaisedButton';
 
 export namespace CreateTeamPage {
   export type StateProps = {};
@@ -41,9 +41,9 @@ export const CreateTeamPagePure: SFC<CreateTeamPage.Props> = props =>
           fullWidth
         />
       </CardText>
-      <CardActions>
-        <FlatButton label="Create"  type="submit"/>
-      </CardActions>
+      <CardActionsWrapper>
+        <RaisedButton label="Create"  type="submit" primary/>
+      </CardActionsWrapper>
     </form>
   </CreateTeamPageWrapper>;
 
