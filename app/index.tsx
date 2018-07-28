@@ -16,6 +16,7 @@ import { markAsyncAction } from 'store/markAsyncAction';
 import { AppView } from 'view/AppView/AppView';
 import WebFont from 'webfontloader';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { reducer as formReducer } from 'redux-form';
 
 const history = createBrowserHistory();
 
@@ -57,7 +58,7 @@ const enhancer: StoreEnhancer<any> = composeEnhancers(
   applyMiddleware(routerMiddleware(history), thunkMiddleware.withExtraArgument(container))
 );
 
-const rootReducer = reduceReducers(routerReducer as any, combineReducers<any>({}));
+const rootReducer = reduceReducers(routerReducer as any, combineReducers<any>({ form: formReducer }));
 
 const store: DetectableStore<any> = createStore(
   reduceReducers(rootReducer, appReducer),

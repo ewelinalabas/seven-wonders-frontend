@@ -1,5 +1,6 @@
 import { AxiosInstance } from 'axios';
 import { TeamMapper } from '../mapper/TeamMapper';
+import { Team } from 'model/Team';
 
 export namespace TeamApi {
   export type Entry = {
@@ -12,9 +13,14 @@ export namespace TeamApi {
 export class TeamApi {
   constructor(private client: AxiosInstance, private teamMapper: TeamMapper) {}
 
-  list(): Promise<TeamApi.Entry> {
+  list(): Promise<Team[]> {
     return this.client
       .get('/teams')
       .then(response => response.data.data.map(team => this.teamMapper.deserialize(team)));
+  }
+
+  create(data: Team): Promise<Team> {
+    return this.client.post('/teams', this.teamMapper.serialize(data))
+    .then(response => this.teamMapper.deserialize(response.data));
   }
 }
