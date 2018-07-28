@@ -97,7 +97,8 @@ const config = {
     // Provide env variables
     new EnvironmentPlugin([
       'NODE_ENV',
-      'FRONTEND_API_CLIENT_URL'
+      'FRONTEND_API_CLIENT_URL',
+      'BACKEND_API_CLIENT_URL'
     ])
   ]
 };

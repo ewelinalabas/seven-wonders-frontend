@@ -1,4 +1,4 @@
 export namespace AppRoute {
   export const HOME = '/';
-  export const COUNTER = '/counter';
+  export const CREATE_TEAM = '/create-team';
 }

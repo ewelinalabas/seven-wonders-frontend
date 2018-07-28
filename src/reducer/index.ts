@@ -1,6 +1,6 @@
 import { asyncReducer } from 'reducer/asyncReducer';
 import { reduceReducers } from 'reducer/reduceReducers';
 import { AppState } from 'store';
-import { counterReducer } from 'reducer/counterReducer';
+import { teamReducer } from 'reducer/teamReducer';
 
-export const appReducer = reduceReducers<AppState>(asyncReducer, counterReducer);
+export const appReducer = reduceReducers<AppState>(asyncReducer, teamReducer);

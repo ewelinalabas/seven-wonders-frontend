@@ -22,3 +22,7 @@ export const ContentWrapper = glamorous.main({
   height: '100%',
   overflow: 'auto'
 });
+
+export const LeftNavigatonMenuWrapper = glamorous.div({
+  width: '300px'
+});

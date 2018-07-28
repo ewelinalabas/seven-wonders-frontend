@@ -30,6 +30,7 @@
       "reducer": ["./src/reducer/index"],
       "reducer/*": ["./src/reducer/*"],
       "router/*": ["./src/router/*"],
+      "register/*": ["./src/register/*"],
       "selector/*": ["./src/selector/*"],
       "store": ["./src/store/index"],
       "store/*": ["./src/store/*"],
