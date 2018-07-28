@@ -5,6 +5,8 @@ import { SingleTeam } from 'view/TeamListPage/SingleTeam/SingleTeam';
 import { connect } from 'react-redux';
 import { selectTeamList } from 'selector/teamSelector';
 import { Team } from 'model/Team';
+import { DefaultLoader } from 'component/DefaultLoader/DefaultLoader';
+import { FETCH_TEAMS } from 'action/teamAction';
 
 export namespace TeamListPage {
   export type StateProps = {
@@ -17,7 +19,14 @@ export namespace TeamListPage {
 export const TeamListPagePure: SFC<TeamListPage.Props> = props => (
   <TeamListWrapper>
     <h2>All Teams</h2>
-    {props.list.map((team, index) => <SingleTeam key={index} team={team} />)}
+    <DefaultLoader
+      name={FETCH_TEAMS}
+      resolved={() =>
+        <>
+          {props.list.map((team, index) => <SingleTeam key={index} team={team} />)}
+        </>
+      }
+    />
   </TeamListWrapper>
 );
 
