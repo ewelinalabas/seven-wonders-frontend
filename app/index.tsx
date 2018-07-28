@@ -58,7 +58,10 @@ const enhancer: StoreEnhancer<any> = composeEnhancers(
   applyMiddleware(routerMiddleware(history), thunkMiddleware.withExtraArgument(container))
 );
 
-const rootReducer = reduceReducers(routerReducer as any, combineReducers<any>({ form: formReducer }));
+const rootReducer = reduceReducers(
+  routerReducer as any,
+  combineReducers<any>({ form: formReducer })
+);
 
 const store: DetectableStore<any> = createStore(
   reduceReducers(rootReducer, appReducer),

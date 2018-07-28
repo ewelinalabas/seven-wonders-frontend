@@ -25,30 +25,15 @@ export const SingleTeam: SFC<SingleTeam.Props> = props => {
       <CardTitle title={props.team.name} subtitle={props.team.description} />
       <CardText>
         <List>
-          <ListItem
-            leftAvatar={<Avatar src={UserAvatar} />}
-            primaryText="Brendan Lim"
-          />
+          <ListItem leftAvatar={<Avatar src={UserAvatar} />} primaryText="Brendan Lim" />
           <Divider inset={true} />
-          <ListItem
-            leftAvatar={<Avatar src={UserAvatar} />}
-            primaryText="me, Scott, Jennifer"
-          />
+          <ListItem leftAvatar={<Avatar src={UserAvatar} />} primaryText="me, Scott, Jennifer" />
           <Divider inset={true} />
-          <ListItem
-            leftAvatar={<Avatar src={UserAvatar} />}
-            primaryText="Grace Ng"
-          />
+          <ListItem leftAvatar={<Avatar src={UserAvatar} />} primaryText="Grace Ng" />
           <Divider inset={true} />
-          <ListItem
-            leftAvatar={<Avatar src={UserAvatar} />}
-            primaryText="Kerem Suer"
-          />
+          <ListItem leftAvatar={<Avatar src={UserAvatar} />} primaryText="Kerem Suer" />
           <Divider inset={true} />
-          <ListItem
-            leftAvatar={<Avatar src={UserAvatar} />}
-            primaryText="Raquel Parrado"
-          />
+          <ListItem leftAvatar={<Avatar src={UserAvatar} />} primaryText="Raquel Parrado" />
         </List>
       </CardText>
       <CardActionWrapper>

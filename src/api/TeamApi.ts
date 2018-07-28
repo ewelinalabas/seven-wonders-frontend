@@ -20,7 +20,8 @@ export class TeamApi {
   }
 
   create(data: Team): Promise<Team> {
-    return this.client.post('/teams', this.teamMapper.serialize(data))
-    .then(response => this.teamMapper.deserialize(response.data));
+    return this.client
+      .post('/teams', this.teamMapper.serialize(data))
+      .then(response => this.teamMapper.deserialize(response.data));
   }
 }

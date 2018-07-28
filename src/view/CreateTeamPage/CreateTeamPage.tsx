@@ -23,16 +23,12 @@ export namespace CreateTeamPage {
   export type Props = StateProps & DispatchProps & OwnProps & InjectedFormProps<FormData>;
 }
 
-export const CreateTeamPagePure: SFC<CreateTeamPage.Props> = props =>
+export const CreateTeamPagePure: SFC<CreateTeamPage.Props> = props => (
   <CreateTeamPageWrapper>
     <form onSubmit={props.handleSubmit}>
-      <CardTitle title="Create new team"/>
+      <CardTitle title="Create new team" />
       <CardText>
-        <TextField
-          name="name"
-          floatingLabelText="Team name"
-          fullWidth
-        />
+        <TextField name="name" floatingLabelText="Team name" fullWidth />
         <TextField
           name="description"
           floatingLabelText="Team description"
@@ -42,15 +38,14 @@ export const CreateTeamPagePure: SFC<CreateTeamPage.Props> = props =>
         />
       </CardText>
       <CardActionsWrapper>
-        <RaisedButton label="Create"  type="submit" primary/>
+        <RaisedButton label="Create" type="submit" primary />
       </CardActionsWrapper>
     </form>
-  </CreateTeamPageWrapper>;
+  </CreateTeamPageWrapper>
+);
 
 export const CreateTeamPage: ComponentClass<CreateTeamPage.OwnProps> = compose(
-  connect(
-    state => ({})
-  ),
+  connect(state => ({})),
   reduxForm({
     form: FormNames.CreateTeam,
     onSubmit: (data: CreateTeamPage.FormData, dispatch) => {

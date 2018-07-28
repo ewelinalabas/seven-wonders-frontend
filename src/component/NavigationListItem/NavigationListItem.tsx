@@ -12,7 +12,6 @@ export namespace NavigationListItem {
   };
   export type OwnProps = ListItemProps & {
     href: string;
-    activeBackgroundColor: string;
     activeColor: string;
     activeFontWeight?: any;
     matchExact?: boolean;

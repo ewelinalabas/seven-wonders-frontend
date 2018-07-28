@@ -21,11 +21,9 @@ export const TeamListPagePure: SFC<TeamListPage.Props> = props => (
     <h2>All Teams</h2>
     <DefaultLoader
       name={FETCH_TEAMS}
-      resolved={() =>
-        <>
-          {props.list.map((team, index) => <SingleTeam key={index} team={team} />)}
-        </>
-      }
+      resolved={() => (
+        <>{props.list.map((team, index) => <SingleTeam key={index} team={team} />)}</>
+      )}
     />
   </TeamListWrapper>
 );
