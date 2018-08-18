@@ -15,16 +15,10 @@ export const NavigationMenu: SFC<NavigationMenu.Props> = props => {
   return (
     <NavigationMenuPaper>
       <List>
-        <NavigationListItem
-          primaryText="Home"
-          href={AppRoute.HOME}
-          activeBackgroundColor="#c200c2"
-          activeColor={grey600}
-        />
+        <NavigationListItem primaryText="Home" href={AppRoute.HOME} activeColor={grey600} />
         <NavigationListItem
           primaryText="Create new team"
           href={AppRoute.CREATE_TEAM}
-          activeBackgroundColor="#c200c2"
           activeColor={grey600}
         />
       </List>

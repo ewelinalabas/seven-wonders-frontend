@@ -16,7 +16,7 @@ export class TeamApi {
   list(): Promise<Team[]> {
     return this.client
       .get('/teams')
-      .then(response => response.data.data.map(team => this.teamMapper.deserialize(team)));
+      .then(response => response.data.map(team => this.teamMapper.deserialize(team)));
   }
 
   create(data: Team): Promise<Team> {

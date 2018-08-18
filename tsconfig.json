@@ -35,6 +35,7 @@
       "store": ["./src/store/index"],
       "store/*": ["./src/store/*"],
       "view/*": ["./src/view/*"],
+      "validator/*": ["./src/validator/*"],
       "util/*": ["./src/util/*"]
     },
     "typeRoots": [
