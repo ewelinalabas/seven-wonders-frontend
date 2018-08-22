@@ -15,11 +15,13 @@
     "prettify": "prettier --write --single-quote --print-width 100 \"src/**/*.ts?(x)\" \"app/**/*.ts?(x)\" \"app/**/*.js\" \"test/**/*.ts?(x)\"",
     "lint": "tslint \"src/**/*.ts?(x)\" \"app/**/*.ts?(x)\" \"test/**/*.ts?(x)\" -t stylish",
     "lint:fix": "tslint \"src/**/*.ts?(x)\" \"app/**/*.ts?(x)\" \"test/**/*.ts?(x)\" -t stylish --fix",
-    "git:hook": "chmod 755 .githook/pre-commit && cd .git/hooks && rm -f pre-commit && ln -s ../../.githook/pre-commit"
+    "git:hook": "chmod 755 .githook/pre-commit && cd .git/hooks && rm -f pre-commit && ln -s ../../.githook/pre-commit",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "cross-env": "^5.1.1",
+    "cypress": "^3.1.0",
     "dotenv": "^5.0.1",
     "dotenv-expand": "^4.2.0",
     "fast-memoize": "^2.2.8",
