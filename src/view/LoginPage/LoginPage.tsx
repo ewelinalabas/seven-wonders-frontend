@@ -36,7 +36,12 @@ export const LoginPagePure: SFC<LoginPage.Props> = props => (
     <CardWrapper>
       <CardTitle title="Seven Wonders" />
       <CardTextWrapper>
-        <TextField name="email" floatingLabelText="Email" fullWidth />
+        <TextField
+          name="email"
+          validate={}
+          floatingLabelText="Email"
+          fullWidth
+        />
         <TextField name="password" floatingLabelText="Password" type="password" fullWidth />
       </CardTextWrapper>
       <CardActionsWrapper>
@@ -64,7 +69,7 @@ export const LoginPage: ComponentClass<LoginPage.OwnProps> = compose(
     onSubmit: (data: LoginPage.FormData, dispatch: any) => {
       dispatch(signIn({ email: data.email, password: data.password })).then(() =>
         dispatch(push(compilePath(AppRoute.HOME)))
-      );
+      ).catch((error) => console.log('error', error));
     }
   })
 )(LoginPagePure);
