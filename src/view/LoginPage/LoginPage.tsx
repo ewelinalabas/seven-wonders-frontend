@@ -17,6 +17,8 @@ import { AppRoute, LoginRoute } from 'app/route';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { signIn } from 'action/authAction';
+import { required } from 'validator/required';
+import { email } from 'validator/email';
 
 export namespace LoginPage {
   export type StateProps = {};
@@ -38,11 +40,17 @@ export const LoginPagePure: SFC<LoginPage.Props> = props => (
       <CardTextWrapper>
         <TextField
           name="email"
-          validate={}
+          validate={[required('Email is required'), email('Email is not correct')]}
           floatingLabelText="Email"
           fullWidth
         />
-        <TextField name="password" floatingLabelText="Password" type="password" fullWidth />
+        <TextField
+          name="password"
+          validate={required('Password is required')}
+          floatingLabelText="Password"
+          type="password"
+          fullWidth
+        />
       </CardTextWrapper>
       <CardActionsWrapper>
         <RaisedButton label="Login" type="submit" primary fullWidth />

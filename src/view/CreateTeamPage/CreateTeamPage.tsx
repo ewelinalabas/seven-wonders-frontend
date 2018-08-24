@@ -52,4 +52,4 @@ export const CreateTeamPage: ComponentClass<CreateTeamPage.OwnProps> = compose(
       dispatch(createTeam(data));
     }
   })
-\)(CreateTeamPagePure);
+)(CreateTeamPagePure);

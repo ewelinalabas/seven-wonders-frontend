@@ -41,7 +41,7 @@
     "typeRoots": [
       "node_modules/@types",
       "./type",
-      "./test/e2e/puppeteer.d.ts"
+      "./test/e2e/puppeteer.d.ts",
     ]
   },
   "exclude": [
