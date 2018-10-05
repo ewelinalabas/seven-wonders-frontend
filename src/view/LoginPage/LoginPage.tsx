@@ -13,7 +13,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { TextField } from 'component/Form/TextField/TextField';
 import { push } from 'react-router-redux';
 import { compilePath } from 'router/compilePath';
-import { AppRoute, LoginRoute } from 'app/route';
+import { AuthRoute } from 'app/route';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { signIn } from 'action/authAction';
@@ -69,15 +69,12 @@ export const LoginPage: ComponentClass<LoginPage.OwnProps> = compose(
   connect(
     state => ({}),
     dispatch => ({
-      redirectToSignUp: () => dispatch(push(compilePath(LoginRoute.SIGN_UP)))
+      redirectToSignUp: () => dispatch(push(compilePath(AuthRoute.SIGN_UP)))
     })
   ),
   reduxForm({
     form: FormNames.Login,
-    onSubmit: (data: LoginPage.FormData, dispatch: any) => {
-      dispatch(signIn({ email: data.email, password: data.password })).then(() =>
-        dispatch(push(compilePath(AppRoute.HOME)))
-      ).catch((error) => console.log('error', error));
-    }
+    onSubmit: (data: LoginPage.FormData, dispatch: any) =>
+      dispatch(signIn({ email: data.email, password: data.password }))
   })
 )(LoginPagePure);

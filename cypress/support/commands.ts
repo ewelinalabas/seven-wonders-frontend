@@ -17,8 +17,8 @@ Cypress.Commands.add('login', () => {
     localStorage.setItem('client', headers['client']);
     localStorage.setItem('token-type', headers['token-type']);
     localStorage.setItem('uid', headers['uid']);
-  })
-})
+  });
+});
 
 //
 // -- This is a child command --
