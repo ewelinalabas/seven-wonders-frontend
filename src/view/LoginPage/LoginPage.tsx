@@ -13,10 +13,12 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { TextField } from 'component/Form/TextField/TextField';
 import { push } from 'react-router-redux';
 import { compilePath } from 'router/compilePath';
-import { AppRoute, LoginRoute } from 'app/route';
+import { AuthRoute } from 'app/route';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { signIn } from 'action/authAction';
+import { required } from 'validator/required';
+import { email } from 'validator/email';
 
 export namespace LoginPage {
   export type StateProps = {};
@@ -36,8 +38,19 @@ export const LoginPagePure: SFC<LoginPage.Props> = props => (
     <CardWrapper>
       <CardTitle title="Seven Wonders" />
       <CardTextWrapper>
-        <TextField name="email" floatingLabelText="Email" fullWidth />
-        <TextField name="password" floatingLabelText="Password" type="password" fullWidth />
+        <TextField
+          name="email"
+          floatingLabelText="Email"
+          validate={[required('Email is required'), email('Email is not correct')]}
+          fullWidth
+        />
+        <TextField
+          name="password"
+          validate={required('Password is required')}
+          floatingLabelText="Password"
+          type="password"
+          fullWidth
+        />
       </CardTextWrapper>
       <CardActionsWrapper>
         <RaisedButton label="Login" type="submit" primary fullWidth />
@@ -56,15 +69,13 @@ export const LoginPage: ComponentClass<LoginPage.OwnProps> = compose(
   connect(
     state => ({}),
     dispatch => ({
-      redirectToSignUp: () => dispatch(push(compilePath(LoginRoute.SIGN_UP)))
+      redirectToSignUp: () => dispatch(push(compilePath(AuthRoute.SIGN_UP)))
     })
   ),
   reduxForm({
     form: FormNames.Login,
     onSubmit: (data: LoginPage.FormData, dispatch: any) => {
-      dispatch(signIn({ email: data.email, password: data.password })).then(() =>
-        dispatch(push(compilePath(AppRoute.HOME)))
-      );
+      dispatch(signIn({ email: data.email, password: data.password }));
     }
   })
 )(LoginPagePure);

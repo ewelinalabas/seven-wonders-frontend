@@ -8,9 +8,9 @@ import { ComponentClass, connect } from 'react-redux';
 import { compose } from 'redux';
 import { InjectedFormProps, reduxForm } from 'redux-form';
 import { FormNames } from 'register/FormNames';
-import CardActions from 'material-ui/Card/CardActions';
 import { createTeam } from 'action/teamAction';
 import RaisedButton from 'material-ui/RaisedButton';
+import { required } from 'validator/required';
 
 export namespace CreateTeamPage {
   export type StateProps = {};
@@ -28,7 +28,12 @@ export const CreateTeamPagePure: SFC<CreateTeamPage.Props> = props => (
     <form onSubmit={props.handleSubmit}>
       <CardTitle title="Create new team" />
       <CardText>
-        <TextField name="name" floatingLabelText="Team name" fullWidth />
+        <TextField
+          name="name"
+          floatingLabelText="Team name"
+          validate={required('Team name is required')}
+          fullWidth
+        />
         <TextField
           name="description"
           floatingLabelText="Team description"
