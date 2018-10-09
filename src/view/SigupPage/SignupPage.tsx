@@ -15,6 +15,7 @@ import { email } from 'validator/email';
 import { required } from 'validator/required';
 import { equalTo } from 'validator/equalTo';
 import { signUp } from 'action/authAction';
+import { Dispatch } from 'redux';
 
 export namespace SignupPage {
   export type StateProps = {};
@@ -70,10 +71,11 @@ export const SignupPagePure: SFC<SignupPage.Props> = props => (
 
 export const SignupPage: ComponentClass<SignupPage.OwnProps> = reduxForm({
   form: FormNames.SignUp,
-  onSubmit: (data: SignupPage.FormData, dispatch: any) => {
+  onSubmit: (data: SignupPage.FormData, dispatch: Dispatch<any>) => {
     const user = {
       email: data.email,
-      password: data.password
+      password: data.password,
+      name: data.name
     };
 
     dispatch(signUp(user)).then(() => dispatch(push(compilePath(AppRoute.HOME))));

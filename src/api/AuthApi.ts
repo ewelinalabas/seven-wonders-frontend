@@ -13,15 +13,15 @@ export namespace AuthApi {
 export class AuthApi {
   constructor(private client: AxiosInstance, private userMapper: UserMapper) {}
 
-  signIn(data): Promise<User> {
+  signIn(user): Promise<User> {
     return this.client
-      .post('/auth/sign_in', { ...data })
+      .post('/auth/sign_in', { ...user })
       .then(response => this.userMapper.deserialize(response.data));
   }
 
-  signUp(data): Promise<User> {
+  signUp(user): Promise<User> {
     return this.client
-      .post('/auth', { ...data })
+      .post('/auth', { ...user })
       .then(response => this.userMapper.deserialize(response.data));
   }
 
